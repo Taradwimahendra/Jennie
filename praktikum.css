@@ -27,6 +27,7 @@ body {
     padding: 0 4%;
 }
 
+/* Hero Section: Dibuat lebih adaptif untuk HP */
 .hero {
     height: 100vh;
     display: flex;
@@ -34,6 +35,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
+    /* Pastikan file header-bg.jpg ada di GitHub dengan nama yang sama persis */
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
                 url('header-bg.jpg') center/cover no-repeat;
     border-bottom: 4px solid var(--netflix-red);
@@ -41,7 +44,7 @@ body {
 
 .pre-title {
     text-transform: uppercase;
-    letter-spacing: 8px;
+    letter-spacing: clamp(4px, 2vw, 8px);
     font-size: 0.9rem;
     color: var(--netflix-red);
     margin-bottom: 10px;
@@ -49,7 +52,8 @@ body {
 
 .hero h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 15vw, 9rem);
+    /* Menggunakan clamp agar teks otomatis mengecil di HP */
+    font-size: clamp(3rem, 12vw, 9rem);
     color: var(--netflix-red);
     line-height: 1;
     text-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
@@ -57,8 +61,8 @@ body {
 }
 
 .subtitle {
-    font-size: 1.2rem;
-    letter-spacing: 4px;
+    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
@@ -78,14 +82,15 @@ body {
 
 .btn-premium:hover {
     background-color: #b20710;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
+/* Animasi Reveal */
 section {
     opacity: 0;
     transform: translateY(40px);
     transition: var(--transition);
-    margin: 100px 0;
+    margin: 80px 0;
 }
 
 section.reveal {
@@ -93,22 +98,25 @@ section.reveal {
     transform: translateY(0);
 }
 
+/* Profile Section: Menggunakan Flexbox yang responsif */
 .profile-section {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
+    margin-bottom: 60px;
 }
 
 .profile-image { flex: 1; }
 .profile-image img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
     transition: 0.5s;
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .profile-image img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     box-shadow: 0 0 20px var(--netflix-red);
 }
 
@@ -116,14 +124,14 @@ section.reveal {
 
 h2 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem;
+    font-size: clamp(2rem, 8vw, 4rem);
     color: #fff;
     margin-bottom: 15px;
 }
 
 .solo-project {
-    margin-top: 30px;
-    padding: 30px;
+    margin-top: 20px;
+    padding: 20px;
     background: var(--card-bg);
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -138,7 +146,11 @@ h2 {
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-.full-video-wrapper video { width: 100%; display: block; }
+.full-video-wrapper video { 
+    width: 100%; 
+    height: auto;
+    display: block; 
+}
 
 audio {
     width: 100%;
@@ -150,25 +162,48 @@ hr {
     border: none;
     height: 1px;
     background: #333;
-    margin: 50px 0;
+    margin: 40px 0;
 }
 
 footer {
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
     border-top: 1px solid #333;
-    color: #555;
 }
 
 #hasil {
-    margin-top: 15px;
+    margin-top: 10px;
     color: var(--netflix-red);
     font-size: 0.8rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* MEDIA QUERIES UNTUK HP DAN TABLET */
 @media (max-width: 992px) {
-    .hero h1 { font-size: 5rem; }
-    .profile-section { flex-direction: column; text-align: center; }
+    .profile-section {
+        flex-direction: column; /* Gambar jadi di atas, teks di bawah */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .profile-image {
+        width: 100%;
+        max-width: 400px; /* Supaya gambar tidak terlalu raksasa di tablet */
+    }
+
+    section {
+        margin: 50px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 10px;
+    }
+    
+    .btn-premium {
+        width: 100%; /* Tombol lebar penuh di HP */
+        padding: 12px;
+        font-size: 1.3rem;
+    }
 }

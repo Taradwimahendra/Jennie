@@ -92,6 +92,52 @@
         <p id="hasil" style="font-size: 0.9em; color: #ff0055; margin-top: 10px;"></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function pesan() {
+            const content = document.getElementById("premium-content");
+            
+            if (content) {
+                // 1. Tampilkan kontainer utama
+                content.style.display = "block";
+                
+                // 2. Scroll otomatis ke konten
+                content.scrollIntoView({ behavior: 'smooth' });
+
+                // 3. Beri sedikit jeda agar visual muncul dulu baru alert
+                setTimeout(() => {
+                    // Paksa semua section muncul (animasi reveal)
+                    const sections = document.querySelectorAll('section');
+                    sections.forEach(section => {
+                        section.classList.add('reveal');
+                    });
+                    
+                    // 4. Tampilkan Alert
+                    alert("Hallo!\n\nSelamat menjelajahi profil eksklusif Jennie Kim & BLACKPINK.");
+                }, 500);
+            }
+        }
+
+        // Fungsi animasi scroll (reveal) manual
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const triggerPoint = window.innerHeight - 150;
+
+                if (sectionTop < triggerPoint) {
+                    section.classList.add('reveal');
+                }
+            });
+        });
+
+        // Menampilkan waktu akses saat halaman dimuat
+        window.addEventListener('load', () => {
+            const hasilElement = document.getElementById("hasil");
+            if (hasilElement) {
+                const tanggal = new Date();
+                hasilElement.innerHTML = "Waktu Akses: " + tanggal.toLocaleString('id-ID');
+            }
+        });
+    </script>
 </body>
 </html>
