@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --netflix-red: #e50914;
+    --dark-bg: #0a0a0a;
+    --card-bg: rgba(30, 30, 30, 0.6);
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
+                url('header-bg.jpg') center/cover no-repeat;
+    border-bottom: 4px solid var(--netflix-red);
+}
+
+.pre-title {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 0.9rem;
+    color: var(--netflix-red);
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 15vw, 9rem);
+    color: var(--netflix-red);
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(229, 9, 20, 0.5);
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.btn-premium {
+    background-color: var(--netflix-red);
+    color: white;
+    padding: 15px 40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-premium:hover {
+    background-color: #b20710;
+    transform: scale(1.1);
+}
+
+section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: var(--transition);
+    margin: 100px 0;
+}
+
+section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.profile-image { flex: 1; }
+.profile-image img {
+    width: 100%;
+    border-radius: 8px;
+    transition: 0.5s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.profile-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--netflix-red);
+}
+
+.profile-info { flex: 1.5; }
+
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.solo-project {
+    margin-top: 30px;
+    padding: 30px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border-left: 5px solid var(--netflix-red);
+}
+
+.full-video-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.full-video-wrapper video { width: 100%; display: block; }
+
+audio {
+    width: 100%;
+    margin-top: 15px;
+    filter: invert(100%) hue-rotate(180deg) brightness(1.5);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: #333;
+    margin: 50px 0;
+}
+
+footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+    color: #555;
+}
+
+#hasil {
+    margin-top: 15px;
+    color: var(--netflix-red);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 992px) {
+    .hero h1 { font-size: 5rem; }
+    .profile-section { flex-direction: column; text-align: center; }
+}

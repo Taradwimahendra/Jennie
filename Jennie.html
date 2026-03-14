@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JENNIE & BLACKPINK | Official Premiere</title>
+    
+    <link rel="stylesheet" href="praktikum.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="hero">
+        <p class="pre-title">Global Icon Spotlight</p>
+        <h1>JENNIE KIM</h1>
+        <p class="subtitle">The Muse. The Visionary. The Trendsetter.</p>
+        <button onclick="pesan()" class="btn-premium">PREMIUM ACCESS</button>
+    </header>
+
+    <main class="container" id="premium-content" style="display: none;">
+        
+        <section class="profile-section">
+            <div class="profile-image">
+                <img src="Jennie.jpg" alt="Jennie Kim Profile">
+            </div>
+            <div class="profile-info">
+                <h2>Defining Elegance</h2>
+                <p>Jennie Kim bukan sekadar penampil, ia adalah representasi dari perpaduan sempurna antara <em>high-fashion</em> dan karisma panggung yang tak tertandingi.</p>
+                
+                <div class="solo-project">
+                    <h3>The Solo Masterpiece: "Mantra"</h3>
+                    <audio controls>
+                        <source src="Mantra.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="solo-video-feature">
+            <div class="text-center" style="text-align: center;">
+                <h2>Artistry in Motion</h2>
+            </div>
+            <div class="full-video-wrapper">
+                <video controls>
+                    <source src="jennie.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="profile-section">
+            <div class="profile-image">
+                <img src="blackpink.jpeg" alt="Blackpink Group Profile">
+            </div>
+            <div class="profile-info">
+                <p class="label" style="color: var(--netflix-red); letter-spacing: 2px;">The Collective Synergy</p>
+                <h2>BLACKPINK: THE REVOLUTION</h2>
+                <p>Setelah membangun identitas personal yang kuat, Jennie bersama BLACKPINK membentuk kekuatan kolektif yang mendominasi industri global.</p>
+                
+                <div class="solo-project">
+                    <h3>Now Stream: "GO"</h3>
+                    <audio controls>
+                        <source src="GO.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="solo-video-feature">
+            <div class="text-center" style="text-align: center;">
+                <h2>The Global Phenomenon</h2>
+            </div>
+            <div class="full-video-wrapper">
+                <video controls loop autoplay muted>
+                    <source src="Blackpink.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p id="hasil" style="font-size: 0.9em; color: #ff0055; margin-top: 10px;"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
